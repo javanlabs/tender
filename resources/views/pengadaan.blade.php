@@ -43,14 +43,11 @@
                 @sortby('tgl_mulai')
                 @sortby('tgl_selesai')
                 @sortby('metode')
-                {{--@sortby('category')--}}
-                {{--@sortby('tag')--}}
-                {{--@sortby('read_priority')--}}
-                {{--@sortby('unread')--}}
             </tr>
             </thead>
             <tbody>
             @forelse($tender as $item)
+                <?php $item = $item->presenter()['data'];?>
                 <tr>
                     <td><a href="{{ $item['sumber'] }}" target="_blank">{{ $item['nama_tender'] }}</a></td>
                     <td>{{ $item['kode_paket'] }}</td>
@@ -58,13 +55,9 @@
                     <td>{{ $item['satker'] }}</td>
                     <td><div class="ui label">{{ number_format($item['pagu'], 0, ',', '.') }}</div></td>
                     <td>{{ $item['tahap_saat_ini'] }}</td>
-                    <td>{{ $item->tgl_mulai->formatLocalized('%d %b %Y') }}</td>
-                    <td>{{ $item->tgl_selesai->formatLocalized('%d %b %Y') }}</td>
+                    <td>{{ $item['tgl_mulai'] }}</td>
+                    <td>{{ $item['tgl_selesai'] }}</td>
                     <td>{{ $item['metode'] }}</td>
-                    {{--<td>{{ $item['category'] }}</td>--}}
-                    {{--<td>{{ $item['tag'] }}</td>--}}
-                    {{--<td>{{ $item['read_priority'] }}</td>--}}
-                    {{--<td>{{ $item['unread'] }}</td>--}}
                 </tr>
             @empty
                 <tr><td colspan="9" class="warning center aligned" style="font-size: 1.5rem;padding:40px;font-style: italic">Data tidak tersedia</td></tr>

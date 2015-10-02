@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2b1f1a43debb2b5402b96417376486f3",
-    "content-hash": "e224163997bad140a0f21c31f66bd714",
+    "hash": "685e8db51e2023ede6bb8dcf30a13852",
+    "content-hash": "0eb6dd25824abfd2a9d5b93a095dd44d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -621,6 +621,69 @@
             "time": "2015-09-30 22:26:59"
         },
         {
+            "name": "league/fractal",
+            "version": "0.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/fractal.git",
+                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/0a51dcb6398dc2377d086210d0624996a1df8322",
+                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "illuminate/contracts": "~5.0",
+                "mockery/mockery": "~0.9",
+                "pagerfanta/pagerfanta": "~1.0.0",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5",
+                "zendframework/zend-paginator": "~2.3"
+            },
+            "suggest": {
+                "illuminate/pagination": "The Illuminate Pagination component.",
+                "pagerfanta/pagerfanta": "Pagerfanta Paginator",
+                "zendframework/zend-paginator": "Zend Framework Paginator"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.13-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Fractal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Sturgeon",
+                    "email": "me@philsturgeon.uk",
+                    "homepage": "http://philsturgeon.uk/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Handle the output of complex data structures ready for API output.",
+            "homepage": "http://fractal.thephpleague.com/",
+            "keywords": [
+                "api",
+                "json",
+                "league",
+                "rest"
+            ],
+            "time": "2015-03-19 15:16:43"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.17.1",
             "source": {
@@ -834,16 +897,16 @@
         },
         {
             "name": "prettus/l5-repository",
-            "version": "2.1.5",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/andersao/l5-repository.git",
-                "reference": "52395432b6df51d0e7c3de281198ad86d2975c6f"
+                "reference": "d263b6d6087e7a0c2df133b3da10b492660382b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/52395432b6df51d0e7c3de281198ad86d2975c6f",
-                "reference": "52395432b6df51d0e7c3de281198ad86d2975c6f",
+                "url": "https://api.github.com/repos/andersao/l5-repository/zipball/d263b6d6087e7a0c2df133b3da10b492660382b1",
+                "reference": "d263b6d6087e7a0c2df133b3da10b492660382b1",
                 "shasum": ""
             },
             "require": {
@@ -890,7 +953,7 @@
                 "model",
                 "repository"
             ],
-            "time": "2015-09-11 11:26:57"
+            "time": "2015-09-18 18:34:11"
         },
         {
             "name": "psr/log",
@@ -3028,7 +3091,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "prettus/l5-repository": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

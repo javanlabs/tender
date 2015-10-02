@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Presenters\TenderPresenter;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\TenderRepository;
@@ -15,7 +16,16 @@ class TenderRepositoryEloquent extends BaseRepository implements TenderRepositor
 {
 
     protected $fieldSearchable = [
-        'nama_tender' => 'like'
+        'nama_tender'    => 'like',
+        'kode_paket'     => 'like',
+        'unit'           => 'like',
+        'satker'         => 'like',
+        'pagu'           => 'like',
+        'tahap_saat_ini' => 'like',
+        'tgl_mulai'      => 'like',
+        'tgl_selesai'    => 'like',
+        'metode'         => 'like',
+
     ];
 
     /**
@@ -34,5 +44,10 @@ class TenderRepositoryEloquent extends BaseRepository implements TenderRepositor
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    public function presenter()
+    {
+        return TenderPresenter::class;
     }
 }

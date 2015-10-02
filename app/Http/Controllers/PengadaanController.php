@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Repositories\TenderRepositoryEloquent;
 
 class PengadaanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param TenderRepositoryEloquent $repository
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(TenderRepositoryEloquent $repository)
     {
-        $tender = app()->make('App\Repositories\TenderRepositoryEloquent')->paginate();
+        $tender = $repository->skipPresenter()->paginate();
         return view('pengadaan', compact('tender'));
     }
 
